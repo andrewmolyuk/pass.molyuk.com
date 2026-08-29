@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secret Relay</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow" data-i18n="eyebrow">Просмотр секрета</div>
+    <h1 data-i18n="viewTitle">Secret Relay</h1>
+    <p class="sub" data-i18n="viewSubtitle"></p>
+    <div class="lang-switch">
+      <button data-lang-switch="ru">RU</button>
+      <button data-lang-switch="en">EN</button>
+    </div>
+  </header>
+
+  <div class="panel">
+    <label data-i18n="pinLabel">PIN (сообщён отдельно)</label>
+    <input id="pinAttempt" type="text" inputmode="numeric" maxlength="6" data-i18n-placeholder="pinPlaceholder">
+
+    <button class="btn" id="openBtn" data-i18n="openBtn">Показать секрет</button>
+
+    <div class="status-row">
+      <div class="dot" id="statusDot"></div>
+      <span id="statusText" data-i18n="statusIdle"></span>
+    </div>
+
+    <div id="revealBox"></div>
+  </div>
+
+  <div class="footer-note" data-i18n-html="viewFooterNote"></div>
+</div>
+<script type="module" src="/view.js"></script>
+</body>
+</html>

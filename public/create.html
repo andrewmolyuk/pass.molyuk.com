@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secret Relay</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow" data-i18n="eyebrow">Одноразовая ссылка</div>
+    <h1 data-i18n="title">Secret Relay</h1>
+    <p class="sub" data-i18n="subtitle"></p>
+    <div class="lang-switch">
+      <button data-lang-switch="ru">RU</button>
+      <button data-lang-switch="en">EN</button>
+    </div>
+  </header>
+
+  <div class="panel">
+    <label data-i18n="secretLabel">Секрет</label>
+    <textarea id="secretInput" data-i18n-placeholder="secretPlaceholder"></textarea>
+
+    <label data-i18n="ttlLabel">Срок жизни ссылки</label>
+    <select id="ttlInput">
+      <option value="300" data-i18n="ttl5m">5 минут</option>
+      <option value="3600" selected data-i18n="ttl1h">1 час</option>
+      <option value="86400" data-i18n="ttl24h">24 часа</option>
+    </select>
+
+    <button class="btn" id="createBtn" data-i18n="createBtn">Создать ссылку</button>
+
+    <div class="out" id="linkOut" data-i18n="linkPlaceholder">Ссылка появится здесь</div>
+    <button class="btn secondary hidden" id="copyLinkBtn" data-i18n="copyBtn">Скопировать ссылку</button>
+    <div class="pin-out hidden" id="pinOut"></div>
+    <div class="pin-hint hidden" id="pinHint" data-i18n="pinHint"></div>
+    <div class="note" id="createNote"></div>
+  </div>
+
+  <div class="footer-note" data-i18n-html="footerNote"></div>
+</div>
+<script type="module" src="/create.js"></script>
+</body>
+</html>

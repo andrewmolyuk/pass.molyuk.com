@@ -1,0 +1,243 @@
+:root {
+  --ink: #14171e;
+  --ink-2: #1b1f28;
+  --panel: #1f2430;
+  --line: #2c3140;
+  --text: #eae7e0;
+  --text-dim: #8b90a0;
+  --amber: #e8b339;
+  --teal: #3fa796;
+  --red: #d65a45;
+  --mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+  --sans: 'Inter', -apple-system, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--text);
+  font-family: var(--sans);
+  min-height: 100vh;
+  padding: 32px 20px 60px;
+}
+.wrap {
+  max-width: 520px;
+  margin: 0 auto;
+}
+header {
+  margin-bottom: 26px;
+  position: relative;
+}
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--amber);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+h1 {
+  font-size: 24px;
+  margin: 0 0 6px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.sub {
+  color: var(--text-dim);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.lang-switch {
+  display: flex;
+  gap: 6px;
+  margin-top: 16px;
+}
+.lang-switch button {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--text-dim);
+  border-radius: 5px;
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 4px 9px;
+  cursor: pointer;
+}
+.lang-switch button.active {
+  border-color: var(--amber);
+  color: var(--amber);
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  display: block;
+  font-size: 12px;
+  color: var(--text-dim);
+  margin: 14px 0 6px;
+}
+label:first-of-type {
+  margin-top: 0;
+}
+textarea,
+input,
+select {
+  width: 100%;
+  background: var(--ink-2);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 13.5px;
+  padding: 10px 11px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+textarea:focus,
+input:focus,
+select:focus {
+  border-color: var(--amber);
+}
+textarea {
+  resize: vertical;
+  min-height: 90px;
+  font-family: var(--mono);
+  font-size: 13px;
+}
+
+.btn {
+  margin-top: 18px;
+  background: var(--amber);
+  color: #1a1400;
+  border: none;
+  border-radius: 6px;
+  padding: 11px 16px;
+  font-weight: 600;
+  font-size: 13.5px;
+  cursor: pointer;
+  transition: filter 0.15s, transform 0.1s;
+}
+.btn:hover {
+  filter: brightness(1.08);
+}
+.btn:active {
+  transform: scale(0.98);
+}
+.btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.btn.secondary {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+.btn.secondary:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+}
+
+.out {
+  margin-top: 16px;
+  background: var(--ink-2);
+  border: 1px dashed var(--line);
+  border-radius: 6px;
+  padding: 12px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  word-break: break-all;
+  color: var(--teal);
+  min-height: 20px;
+}
+.pin-out {
+  margin-top: 10px;
+  background: var(--ink-2);
+  border: 1px solid var(--amber);
+  border-radius: 6px;
+  padding: 14px;
+  font-family: var(--mono);
+  font-size: 22px;
+  letter-spacing: 0.25em;
+  text-align: center;
+  color: var(--amber);
+}
+.pin-hint {
+  font-size: 11.5px;
+  color: var(--text-dim);
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+.note {
+  font-size: 11.5px;
+  color: var(--text-dim);
+  line-height: 1.5;
+  margin-top: 10px;
+}
+.note.warn {
+  color: var(--amber);
+}
+.note.err {
+  color: var(--red);
+}
+
+.status-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 14px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-dim);
+}
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--line);
+  flex: none;
+}
+.dot.on {
+  background: var(--teal);
+}
+.dot.off {
+  background: var(--red);
+}
+
+.reveal {
+  margin-top: 16px;
+  background: var(--ink-2);
+  border: 1px solid var(--teal);
+  border-radius: 6px;
+  padding: 14px;
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--teal);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.footer-note {
+  margin-top: 28px;
+  font-size: 12px;
+  color: var(--text-dim);
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+  line-height: 1.6;
+}
+.footer-note b {
+  color: var(--text);
+}
+
+.hidden {
+  display: none;
+}
