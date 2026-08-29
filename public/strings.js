@@ -13,8 +13,8 @@ export const STRINGS = {
     ttl24h: '24 часа',
     createBtn: 'Создать ссылку',
     linkPlaceholder: 'Ссылка появится здесь',
-    copyBtn: 'Скопировать ссылку',
-    copied: 'Скопировано',
+    copyLinkAria: 'Скопировать ссылку',
+    copyPinAria: 'Скопировать PIN',
     pinHint:
       'Это PIN — сообщите его получателю отдельно (голосом, в другом чате). Он нигде не хранится: без него ссылка бесполезна, даже если попадёт не в те руки.',
     createSuccess: 'Ссылка одноразовая. PIN нигде не сохранён — только у вас на экране прямо сейчас.',
@@ -40,6 +40,7 @@ export const STRINGS = {
     statusAttemptsExhausted: 'неверный PIN. лимит попыток исчерпан — запись уничтожена',
     statusRateLimited: 'слишком много попыток с вашего адреса, попробуйте позже',
     statusSuccess: 'секрет получен · запись уничтожена',
+    copySecretAria: 'Скопировать секрет',
     viewFooterNote: `<b>Обратите внимание:</b><br>
       · после успешного просмотра ссылка станет недействительной<br>
       · расшифровка происходит локально в вашем браузере — сервер не видит ни секрет, ни PIN<br>
@@ -59,8 +60,8 @@ export const STRINGS = {
     ttl24h: '24 hours',
     createBtn: 'Create link',
     linkPlaceholder: 'Link will appear here',
-    copyBtn: 'Copy link',
-    copied: 'Copied',
+    copyLinkAria: 'Copy link',
+    copyPinAria: 'Copy PIN',
     pinHint:
       'This is the PIN — share it with the recipient separately (voice call, another chat). It is never stored: without it the link is useless even if it ends up in the wrong hands.',
     createSuccess: 'The link is one-time use. The PIN is not saved anywhere — only on your screen right now.',
@@ -86,6 +87,7 @@ export const STRINGS = {
     statusAttemptsExhausted: 'wrong PIN. attempt limit reached — record destroyed',
     statusRateLimited: 'too many attempts from your address, try again later',
     statusSuccess: 'secret retrieved · record destroyed',
+    copySecretAria: 'Copy secret',
     viewFooterNote: `<b>Please note:</b><br>
       · after a successful view, the link becomes invalid<br>
       · decryption happens locally in your browser — the server never sees the secret or the PIN<br>

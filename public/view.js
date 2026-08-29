@@ -1,6 +1,7 @@
 import { decryptSecret } from '/crypto.js';
 import { initLangSwitcher } from '/i18n.js';
 import { STRINGS } from '/strings.js';
+import { createCopyButton, wireCopyButton } from '/copy.js';
 
 const getLang = initLangSwitcher(STRINGS);
 
@@ -70,10 +71,20 @@ openBtn.addEventListener('click', async () => {
 
     await fetch(`/api/secrets/${encodeURIComponent(id)}/burn`, { method: 'POST' });
     setStatus('on', 'statusSuccess');
+
+    const row = document.createElement('div');
+    row.className = 'field-row';
+
     const reveal = document.createElement('div');
     reveal.className = 'reveal';
     reveal.textContent = secret;
-    revealBox.appendChild(reveal);
+
+    const copyBtn = createCopyButton(STRINGS[getLang()].copySecretAria);
+    wireCopyButton(copyBtn, () => secret);
+
+    row.appendChild(reveal);
+    row.appendChild(copyBtn);
+    revealBox.appendChild(row);
   } finally {
     openBtn.disabled = false;
   }

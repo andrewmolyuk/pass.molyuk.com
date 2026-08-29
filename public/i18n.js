@@ -36,6 +36,10 @@ export function applyTranslations(strings, lang) {
     const value = strings[lang]?.[el.getAttribute('data-i18n-placeholder')];
     if (value !== undefined) el.setAttribute('placeholder', value);
   });
+  document.querySelectorAll('[data-i18n-aria]').forEach((el) => {
+    const value = strings[lang]?.[el.getAttribute('data-i18n-aria')];
+    if (value !== undefined) el.setAttribute('aria-label', value);
+  });
   if (strings[lang]?.pageTitle) document.title = strings[lang].pageTitle;
 }
 

@@ -1,6 +1,7 @@
 import { encryptSecret, randomBytes, randomPin } from '/crypto.js';
 import { initLangSwitcher } from '/i18n.js';
 import { STRINGS } from '/strings.js';
+import { wireCopyButton } from '/copy.js';
 
 const getLang = initLangSwitcher(STRINGS);
 
@@ -10,8 +11,12 @@ const ttlInput = document.getElementById('ttlInput');
 const linkOut = document.getElementById('linkOut');
 const copyLinkBtn = document.getElementById('copyLinkBtn');
 const pinOut = document.getElementById('pinOut');
+const copyPinBtn = document.getElementById('copyPinBtn');
 const pinHint = document.getElementById('pinHint');
 const note = document.getElementById('createNote');
+
+wireCopyButton(copyLinkBtn, () => linkOut.textContent);
+wireCopyButton(copyPinBtn, () => pinOut.textContent);
 
 createBtn.addEventListener('click', async () => {
   const secret = secretInput.value;
@@ -47,6 +52,7 @@ createBtn.addEventListener('click', async () => {
     copyLinkBtn.classList.remove('hidden');
     pinOut.textContent = pin;
     pinOut.classList.remove('hidden');
+    copyPinBtn.classList.remove('hidden');
     pinHint.classList.remove('hidden');
     note.textContent = t.createSuccess;
     note.className = 'note warn';
@@ -57,18 +63,5 @@ createBtn.addEventListener('click', async () => {
     note.className = 'note err';
   } finally {
     createBtn.disabled = false;
-  }
-});
-
-copyLinkBtn.addEventListener('click', async () => {
-  const t = STRINGS[getLang()];
-  try {
-    await navigator.clipboard.writeText(linkOut.textContent);
-    copyLinkBtn.textContent = t.copied;
-    setTimeout(() => {
-      copyLinkBtn.textContent = t.copyBtn;
-    }, 1500);
-  } catch {
-    // clipboard API unavailable — link is already visible for manual copy
   }
 });

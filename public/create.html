@@ -31,9 +31,20 @@
 
     <button class="btn" id="createBtn" data-i18n="createBtn">Создать ссылку</button>
 
-    <div class="out" id="linkOut" data-i18n="linkPlaceholder">Ссылка появится здесь</div>
-    <button class="btn secondary hidden" id="copyLinkBtn" data-i18n="copyBtn">Скопировать ссылку</button>
-    <div class="pin-out hidden" id="pinOut"></div>
+    <div class="field-row">
+      <div class="out" id="linkOut" data-i18n="linkPlaceholder">Ссылка появится здесь</div>
+      <button class="icon-btn hidden" id="copyLinkBtn" type="button" data-i18n-aria="copyLinkAria">
+        <svg class="icon-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path></svg>
+        <svg class="icon-check hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      </button>
+    </div>
+    <div class="field-row">
+      <div class="pin-out hidden" id="pinOut"></div>
+      <button class="icon-btn hidden" id="copyPinBtn" type="button" data-i18n-aria="copyPinAria">
+        <svg class="icon-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path></svg>
+        <svg class="icon-check hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      </button>
+    </div>
     <div class="pin-hint hidden" id="pinHint" data-i18n="pinHint"></div>
     <div class="note" id="createNote"></div>
   </div>
